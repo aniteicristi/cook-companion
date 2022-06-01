@@ -1,6 +1,6 @@
+import 'package:cook_companion/pages/home/home_page.dart';
+import 'package:cook_companion/pages/recipes/recipes_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -8,10 +8,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-        title: const Text('Cook Companion'),
-      )),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/recipes': (context) => RecipesPage(),
+      },
     );
   }
 }
